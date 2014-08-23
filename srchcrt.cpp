@@ -7,7 +7,7 @@
 typedef unsigned (WINAPI *PBEGINTHREADEX_THREADFUNC)(LPVOID lpThreadParameter);
 typedef unsigned *PBEGINTHREADEX_THREADID;
 DWORD WINAPI ThreadFunc(LPVOID);
-
+//
 using namespace std;
 int main()
 {
