@@ -25,6 +25,9 @@ int main()
 	return EXIT_SUCCESS;
 }
 
+
+
+
 DWORD WINAPI ThreadFunc(LPVOID n)
 {
 	cout << "this is new thread" << endl;
