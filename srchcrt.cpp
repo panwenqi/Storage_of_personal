@@ -9,8 +9,6 @@ typedef unsigned *PBEGINTHREADEX_THREADID;
 DWORD WINAPI ThreadFunc(LPVOID);
 //
 
-
-
 //ubuntun
 using namespace std;
 int main()
