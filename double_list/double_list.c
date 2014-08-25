@@ -47,11 +47,11 @@ void insert_h_list(PNode head, PNode tail, Type p_data)  //头插法
 {
 	PNode temp = create_node(p_data);
 	int size = list_size(head);
-	if (temp != NULL)
+	if (temp != NULL) //此处有问题，尾节点的next居然指向了上一个节点
 	{
 		if (size == NULL)
 		{
-			temp->front = tail->next;
+			temp->front = tail->front;
 			temp->next = head->next;
 			head->next = temp;
 			tail->next = temp;
@@ -68,7 +68,8 @@ void insert_h_list(PNode head, PNode tail, Type p_data)  //头插法
 void show_list(PNode head)
 {
 	PNode p = head;
-	while ((p->next) != NULL)
+	p = p->next;
+	while ((p->data) != NULL)
 	{
 		printf("%d ", p->data);
 		p = p->next;
