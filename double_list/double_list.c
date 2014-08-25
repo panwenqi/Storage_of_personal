@@ -1,7 +1,7 @@
-#include "double_list.h"
+ï»¿#include "double_list.h"
 #include <stdio.h>
 #include <stdlib.h>
-PNode create_node(Type p_data)  //´´½¨Ò»¸ö½áµã
+PNode create_node(Type p_data)  //åˆ›å»ºä¸€ä¸ªç»“ç‚¹
 {
 	PNode temp = (PNode)malloc(sizeof(Node));
 	if (temp != NULL)
@@ -13,10 +13,10 @@ PNode create_node(Type p_data)  //´´½¨Ò»¸ö½áµã
 	return temp;
 }
 
-PNode init_dlist()  //³õÊ¼»¯Ò»¸öË«Á´±í
+PNode init_dlist()  //åˆå§‹åŒ–ä¸€ä¸ªåŒé“¾è¡¨
 {
-	PNode head = create_node(0);  //´´½¨Ë«Á´±íµÄÍ·½áµã
-	PNode tail = create_node(0);  //´´½¨Ë«Á´±íµÄÎ²½áµã
+	PNode head = create_node(0);  //åˆ›å»ºåŒé“¾è¡¨çš„å¤´ç»“ç‚¹
+	PNode tail = create_node(0);  //åˆ›å»ºåŒé“¾è¡¨çš„å°¾ç»“ç‚¹
 	if ((head != NULL) && (tail != NULL))
 	{
 		head->next = tail;
@@ -30,7 +30,7 @@ PNode return_tail(PNode head)
 	return head->next; 
 }
 
-int list_size(PNode head)  //·µ»ØÁ´±íµÄ³¤¶È
+int list_size(PNode head)  //è¿”å›é“¾è¡¨çš„é•¿åº¦
 {
 	int n = 0;
 	PNode position = head;
@@ -43,11 +43,11 @@ int list_size(PNode head)  //·µ»ØÁ´±íµÄ³¤¶È
 	return n;
 }
 
-void insert_h_list(PNode head, PNode tail, Type p_data)  //Í·²å·¨
+void insert_h_list(PNode head, PNode tail, Type p_data)  //å¤´æ’æ³•
 {
 	PNode temp = create_node(p_data);
 	int size = list_size(head);
-	if (temp != NULL) //´Ë´¦ÓĞÎÊÌâ£¬Î²½ÚµãµÄnext¾ÓÈ»Ö¸ÏòÁËÉÏÒ»¸ö½Úµã
+	if (temp != NULL) //æ­¤å¤„æœ‰é—®é¢˜ï¼Œå°¾èŠ‚ç‚¹çš„nextå±…ç„¶æŒ‡å‘äº†ä¸Šä¸€ä¸ªèŠ‚ç‚¹
 	{
 		if (size == NULL)
 		{
