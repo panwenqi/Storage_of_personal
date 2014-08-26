@@ -1,28 +1,33 @@
 #ifndef DOUBLE_LIST_H_
 #define DOUBLE_LIST_H_
-
-typedef int Type;  //¶¨ÒåÎÒÃÇ½áµãdata²¿·ÖµÄÊı¾İÀàĞÍ£¬·½±ãÒÔºóĞŞ¸Ä
-
-typedef struct Node //¶¨ÒåÒ»¸öNodeÀàĞÍµÄ½á¹¹Ìå£¬Ò²¾ÍÊÇÎÒÃÇË«Á´±íµÄ½áµã
+#include <stdlib.h>
+#include <stdio.h>
+typedef int Type;
+typedef struct Node
 {
-	struct Node *front;  //Ë«Á´±íµÄÇ°Çı
-	struct Node *next;   //Ë«Á´±íµÄºó¼Ì
-	Type data;           //Ë«Á´±íµÄÊı¾İÓò
-} Node;
+	struct Node* front;  //é“¾è¡¨çš„å‰é©±
+	struct Node* next;   //é“¾è¡¨çš„åç»§
+	Type data;           //é“¾è¡¨çš„æ•°æ®åŸŸ
+}Node;
+typedef Node* PNode;
 
-typedef Node* PNode;   //¶¨ÒåÒ»¸öÖ¸Ïò½áµãÀàĞÍµÄÖ¸Õë
+PNode create_node(Type p_data);  //åˆ›å»ºä¸€ä¸ªç»“ç‚¹
 
-PNode create_node(Type p_data);  //´´½¨½ÓÒ»¸öĞÂ½áµãµÄº¯Êı
+PNode init_dlist();  //åˆå§‹åŒ–ä¸€ä¸ªåŒé“¾è¡¨ï¼Œå¹¶ä¸”è¿”å›é“¾è¡¨çš„å¤´æŒ‡é’ˆ
 
-PNode init_dlist();    //³õÊ¼»¯Ò»¸öË«Á´±í£¬²¢·µ»ØËûµÄÍ·½áµã
+PNode return_tail(PNode dl_head);  //è¿”å›é“¾è¡¨çš„å°¾èŠ‚ç‚¹
 
-int list_size(PNode head); //·µ»ØÁ´±íµÄ³¤¶È
+int dlist_size(PNode dl_head);  //è¿”å›åŒé“¾è¡¨çš„é•¿åº¦
 
-void insert_h_list(PNode head, PNode tail, int p_data);  //Í·²å·¨²åÈëÒ»¸ö½áµã
+void insert_h_node(PNode dl_head, PNode dl_tail, Type p_data);  //å¤´æ’æ³•æ’å…¥é“¾è¡¨
 
-void show_list(PNode head);  //´òÓ¡Á´±í
+void insert_t_node(PNode dl_head, PNode dl_tail, Type p_data);  //å°¾æ’æ³•æ’å…¥é“¾è¡¨
 
-void free_list(PNode head);  //ÊÍ·ÅÁ´±í
+void insert_d_node(PNode dl_head, PNode dl_tail, Type dl_data, Type p_data);  //åœ¨é“¾è¡¨çš„dl_dataä¹‹åæ·»åŠ ä¸€ä¸ªç»“ç‚¹
 
-PNode return_tail(PNode head);  //·µ»ØÁ´±íµÄÎ²½áµã
+void delete_node(PNode dl_head, Type dl_data);  //åˆ é™¤é“¾è¡¨ä¸­dl_dataç»“ç‚¹
+
+void show_dlist(PNode dl_head);  //æ‰“å°åŒé“¾è¡¨
+
+void free_dlist(PNode dl_head);  //é‡Šæ”¾åŒé“¾è¡¨
 #endif
