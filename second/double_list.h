@@ -5,25 +5,25 @@
 typedef int Type;
 typedef struct Node
 {
-	struct Node* front;  //Á´±íµÄÇ°Çı
-	struct Node* next;   //Á´±íµÄºó¼Ì
-	Type data;           //Á´±íµÄÊı¾İÓò
+	struct Node* front;  //é“¾è¡¨çš„å‰é©±
+	struct Node* next;   //é“¾è¡¨çš„åç»§
+	Type data;           //é“¾è¡¨çš„æ•°æ®åŸŸ
 }Node;
 typedef Node* PNode;
 
-PNode create_node(Type p_data);  //´´½¨Ò»¸ö½Úµã
+PNode create_node(Type p_data);  //åˆ›å»ºä¸€ä¸ªèŠ‚ç‚¹
 
-PNode init_dlist();  //³õÊ¼»¯Ò»¸öË«Á´±í£¬²¢ÇÒ·µ»ØÁ´±íµÄÍ·Ö¸Õë
+PNode init_dlist();  //åˆå§‹åŒ–ä¸€ä¸ªåŒé“¾è¡¨ï¼Œå¹¶ä¸”è¿”å›é“¾è¡¨çš„å¤´æŒ‡é’ˆ
 
-PNode return_tail(PNode dl_head);  //·µ»ØÁ´±íµÄÎ²½Úµã£¬×¢Òâ£¬³õÊ¼»¯Ò»¸öÁ´±íºó£¬Ó¦Á¢¼´µ÷ÓÃÕâ¸öº¯Êı·µ»ØÎ²½Úµã
+PNode return_tail(PNode dl_head);  //è¿”å›é“¾è¡¨çš„å°¾èŠ‚ç‚¹ï¼Œæ³¨æ„ï¼Œåˆå§‹åŒ–ä¸€ä¸ªé“¾è¡¨åï¼Œåº”ç«‹å³è°ƒç”¨è¿™ä¸ªå‡½æ•°è¿”å›å°¾èŠ‚ç‚¹
 
-int dlist_size(PNode dl_head);  //·µ»ØË«Á´±íµÄ³¤¶È
+int dlist_size(PNode dl_head);  //è¿”å›åŒé“¾è¡¨çš„é•¿åº¦
 
-void insert_h_node(PNode dl_head, PNode dl_tail, Type p_data);  //Í·²å·¨²åÈëÁ´±í
+void insert_h_node(PNode dl_head, PNode dl_tail, Type p_data);  //å¤´æ’æ³•æ’å…¥é“¾è¡¨
 
-void insert_t_node(PNode dl_head, PNode dl_tail, Type p_data);  //Î²²å·¨²åÈëÁ´±í
+void insert_t_node(PNode dl_head, PNode dl_tail, Type p_data);  //å°¾æ’æ³•æ’å…¥é“¾è¡¨
 
-void show_dlist(PNode dl_head);  //´òÓ¡Ë«Á´±í
+void show_dlist(PNode dl_head);  //æ‰“å°åŒé“¾è¡¨
 
-void free_dlist(PNode dl_head);  //ÊÍ·ÅË«Á´±í
+void free_dlist(PNode dl_head);  //é‡Šæ”¾åŒé“¾è¡¨
 #endif
