@@ -21,6 +21,12 @@ int slist_size(PNode s_head);  //求单链表的长度
 
 void insert_h_slist(PNode s_head, PNode s_tail, Type p_data);  //头插法插入单链表
 
+void insert_t_slist(PNode s_head, PNode s_tail, Type p_data);  //尾插法插入单链表
+
+void insert_d_slist(PNode s_head, PNode s_tail, Type s_data, Type p_data);  //在链表中s_data结点后插入一个结点p_data
+
+void delete_node(PNode s_head, PNode s_tail, Type p_data);  //删除一个数据域为p_data的结点
+
 void show_slist(PNode s_head);  //打印单链表
 
 void free_slist(PNode s_head);  //释放单链表
