@@ -26,8 +26,11 @@
 #include <sys/wait.h>
 #include <stdlib.h>
 
-#define ISspace(x) isspace((int)(x))
-
+#define ISspace(x) isspace((int)(x)) //宏定义。在编译预处理时，把出现ISspace(x)的地方都替换为isspace((int)(x))，并且参数x都强制转换为int型
+/*
+	判断字符x是否为空白符
+	当x为空白符时，返回非零值，否则返回零。（空白符指空格、水平制表、垂直制表、换页、回车和换行符。）
+*/
 #define SERVER_STRING "Server: jdbhttpd/0.1.0\r\n"
 
 void accept_request(int);
@@ -70,7 +73,7 @@ void accept_request(int client)
 	}
 	method[i] = '\0';
 
-	if (strcasecmp(method, "GET") && strcasecmp(method, "POST"))
+	if (strcasecmp(method, "GET") && strcasecmp(method, "POST"))   //比较不区分大小写的字符串
 	{
 		unimplemented(client);
 		return;
@@ -447,6 +450,8 @@ int startup(u_short *port)
 /* Inform the client that the requested web method has not been
 * implemented.
 * Parameter: the client socket */
+通知客户端这个web请求没有被执行
+参数：客户端的socket
 /**********************************************************************/
 void unimplemented(int client)
 {
