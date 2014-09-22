@@ -12,11 +12,16 @@ int main(int argc, char *argv[])
 	struct sockaddr_in address;
 	int result;
 	char ch = 'A';
-
+	
+	printf("argv[1] = %s\n", argv[0]);
+	
 	sockfd = socket(AF_INET, SOCK_STREAM, 0);
 	address.sin_family = AF_INET;
 	address.sin_addr.s_addr = inet_addr("127.0.0.1");
-	address.sin_port = htons(9734);
+//	address.sin_port = htons(9734);
+	int tmp = atoi(argv[1]);
+	printf("tmp = %d\n", tmp);
+	address.sin_port = htons(tmp);
 	len = sizeof(address);
 	result = connect(sockfd, (struct sockaddr *)&address, len);
 
