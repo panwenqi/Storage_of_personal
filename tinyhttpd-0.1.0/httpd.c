@@ -450,8 +450,8 @@ int startup(u_short *port)
 /* Inform the client that the requested web method has not been
 * implemented.
 * Parameter: the client socket */
-通知客户端这个web请求没有被执行
-参数：客户端的socket
+//通知客户端这个web请求没有被执行
+//参数：客户端的socket
 /**********************************************************************/
 void unimplemented(int client)
 {
